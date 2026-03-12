@@ -1,0 +1,9 @@
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Vv]S/
+.vs/
+*.csproj
+*.sln
+*.unitypackage
