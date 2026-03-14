@@ -33,11 +33,15 @@ public class MovingPlatform : MonoBehaviour
 
     // Karakter platformdan zıplayıp ayrıldığında:
     private void OnCollisionExit2D(Collision2D collision)
+{
+    // Çarpışan obje Player ise
+    if (collision.gameObject.CompareTag("Player"))
     {
-        // Bağı kopar, karakteri tekrar özgür bırak
-        if (collision.gameObject.CompareTag("Player"))
+        // Platform hala aktifse ve sahnede çalışıyorsa bağları kopar
+        if (this.gameObject.activeInHierarchy)
         {
-            collision.transform.SetParent(null);
+            collision.gameObject.transform.SetParent(null);
         }
     }
+}
 }
