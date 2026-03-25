@@ -37,22 +37,46 @@ public class DroneHealth : MonoBehaviour
     
     void Die()
     {
-        // Eğer zaten öldüyse fonksiyonu tekrar çalıştırma (Güvenlik önlemi)
         if (isDead) return; 
         isDead = true;
 
-        // --- SKOR EKLEME KISMI BURADA ---
+        // --- SKOR EKLEME KISMI ---
         if (ScoreManager.instance != null)
         {
             ScoreManager.instance.AddScore(50);
             Debug.Log("Drone yok edildi, 50 puan eklendi!");
         }
-        // --------------------------------
-        
+
+        // --- YENİ EKLENEN KISIM: OYUNCUYA CAN EKLEME ---
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
+            if (playerHealth != null)
+            {
+                playerHealth.Heal(20f); // Oyuncuya 20 can ver
+            }
+        }
+        // ------------------------------------------------
+
         // Drone'un devriye ve ateş etme zekasını kapat
         if (movementScript != null) movementScript.enabled = false;
         if (aiScript != null) aiScript.enabled = false;
 
+        // SADECE PLAYER İLE ÇARPIŞMAYI KAPAT
+        if (player != null)
+        {
+            Collider2D[] droneColliders = GetComponents<Collider2D>();
+            Collider2D[] playerColliders = player.GetComponents<Collider2D>();
+
+            foreach (Collider2D dCol in droneColliders)
+            {
+                foreach (Collider2D pCol in playerColliders)
+                {
+                    Physics2D.IgnoreCollision(dCol, pCol, true);
+                }
+            }
+        }
         
         rb.bodyType = RigidbodyType2D.Dynamic;
         rb.gravityScale = 2f; 
@@ -67,8 +91,8 @@ public class DroneHealth : MonoBehaviour
     {
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
         Color originalColor = sr.color;
-        sr.color = Color.red; // Kırmızı yap
+        sr.color = Color.red; 
         yield return new WaitForSeconds(0.1f);
-        sr.color = originalColor; // Eski rengine döndür
+        sr.color = originalColor; 
     }
 }

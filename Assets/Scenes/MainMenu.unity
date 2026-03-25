@@ -926,7 +926,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -79, y: -67}
+  m_AnchoredPosition: {x: -91, y: -67}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1579319780
@@ -949,7 +949,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Meta Puck
+  m_text: Dark Puck
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7b2bda6016c7240a69df63360b6b6efc, type: 2}
   m_sharedMaterial: {fileID: 6471918035014595167, guid: 7b2bda6016c7240a69df63360b6b6efc, type: 2}
@@ -1507,20 +1507,20 @@ MonoBehaviour:
 
 
     Yem TOPLAMA
-    (DOTS): Etraftaki tum parlayan yemleri (Dots) toplaman kritik onem tasir. Bolumun
-    sonundaki ana cikis kapisi, sahadaki tum yemleri toplamadan asla aktif hale gelmez.
+    (DOTS): Etraftaki tum parlayan yemleri (Dots) toplaman kritik onem tasir. Sahadaki
+    tum yemleri toplamadan asla bolum bitmez.
 
 
-    TEHLIKELER:
-    Hareket eden testerelerden, lazerlerden ve devriye gezen dronlardan uzak dur.
-    Bir temas, can kaybina neden olur.
+    TEHLIKELER: Hareket eden testerelerden,
+    lazerlerden ve devriye gezen dronlardan uzak dur. Bir temas, can kaybina neden
+    olur.
 
 
-    DURAKLATMA: Soluklanmak istersen ESC
-    tusuna basarak oyunu durdurabilirsin.
+    DURAKLATMA: Soluklanmak istersen ESC tusuna basarak oyunu durdurabilirsin.
 
 
-    Simdi sisteme siz ve sag cik!'
+    Simdi
+    sisteme siz ve sag cik!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}

@@ -27,8 +27,14 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth); 
         UpdateHealthUI();
 
-        if (currentHealth <= 0) Die();
-        else StartCoroutine(InvulnerabilityRoutine()); // Hasar alınca ölümsüzlüğü başlat
+        if (currentHealth <= 0) 
+        {
+            Die();
+        }
+        else 
+        {
+            StartCoroutine(InvulnerabilityRoutine()); // Hasar alınca ölümsüzlüğü başlat
+        }
     }
 
     private IEnumerator InvulnerabilityRoutine()
@@ -57,5 +63,39 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    void Die() { Debug.Log("Oyun Bitti!"); }
+    // --- YENİ EKLENEN KISIM: İyileşme Fonksiyonu ---
+    public void Heal(float amount)
+    {
+        // Eğer can zaten tamamsa hiçbir şey yapma
+        if (currentHealth >= maxHealth) return; 
+
+        currentHealth += amount;
+        
+        // Mathf.Clamp sayesinde can 100'ü (maxHealth) asla geçemez. 
+        // Yani 85 canı varken 20 eklenirse 105 olmaz, 100'de kalır.
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth); 
+        
+        UpdateHealthUI(); // Can barı görselini güncelle
+        Debug.Log("Karakter iyileşti! Yeni can: " + currentHealth);
+    }
+    void Die() 
+    { 
+        Debug.Log("Sistem Çöktü! Karakter Öldü."); 
+
+        // 1. Sahnede GameManager'ın içindeki GameOverManager scriptini buluyoruz
+        GameOverManager gameOverManager = FindFirstObjectByType<GameOverManager>();
+        
+        if (gameOverManager != null)
+        {
+            // 2. ScoreManager'daki Singleton yapısını kullanarak güncel skoru anında çekiyoruz!
+            int finalScore = ScoreManager.instance.score; 
+            
+            // 3. Skoru Game Over paneline gönderip zamanı donduruyoruz.
+            gameOverManager.ShowGameOver(finalScore);
+        }
+        else
+        {
+            Debug.LogError("Sahnede GameOverManager bulunamadı! Canvas veya GameManager objesine eklendiğinden emin ol.");
+        }
+    }
 }
