@@ -4,53 +4,68 @@ using System.Collections;
 
 public class PlayerHealth : MonoBehaviour
 {
+    [Header("Ayarlar")]
     public float maxHealth = 100f;
     public float currentHealth;
+    
+    [Header("Görsel")]
     public Image healthBarFill;
     public Gradient healthGradient;
-
-    private bool isInvulnerable = false; // Ölümsüzlük kontrolü
+    
     private SpriteRenderer spriteRenderer;
+    private bool isInvulnerable = false;
 
-    void Start()
+    IEnumerator Start()
+{
+    spriteRenderer = GetComponent<SpriteRenderer>();
+
+    // 1. Sahnenin ve UI'ın tam oturması için 1 frame (kare) bekle
+    yield return null; 
+
+    // 2. ScoreManager'dan canı çek
+    if (ScoreManager.instance != null)
+    {
+        currentHealth = ScoreManager.instance.mevcutCan;
+        Debug.Log("Can Verisi Çekildi: " + currentHealth);
+    }
+    else
     {
         currentHealth = maxHealth;
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        UpdateHealthUI();
     }
+
+    UpdateHealthUI();
+}
 
     public void TakeDamage(float amount)
     {
-        if (isInvulnerable) return; // Ölümsüzse hasar alma
+        if (isInvulnerable) return;
 
         currentHealth -= amount;
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth); 
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+
+        // ScoreManager'daki kalıcı veriyi anında güncelle
+        if (ScoreManager.instance != null)
+        {
+            ScoreManager.instance.mevcutCan = currentHealth;
+        }
+
         UpdateHealthUI();
 
-        if (currentHealth <= 0) 
-        {
-            Die();
-        }
-        else 
-        {
-            StartCoroutine(InvulnerabilityRoutine()); // Hasar alınca ölümsüzlüğü başlat
-        }
+        if (currentHealth <= 0) Die();
+        else StartCoroutine(InvulnerabilityRoutine());
     }
 
-    private IEnumerator InvulnerabilityRoutine()
+    public void Heal(float amount)
     {
-        isInvulnerable = true;
-        
-        // 2 saniye boyunca yanıp sönme efekti
-        for (float i = 0; i < 2f; i += 0.2f)
+        currentHealth += amount;
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+
+        if (ScoreManager.instance != null)
         {
-            spriteRenderer.enabled = false;
-            yield return new WaitForSeconds(0.1f);
-            spriteRenderer.enabled = true;
-            yield return new WaitForSeconds(0.1f);
+            ScoreManager.instance.mevcutCan = currentHealth;
         }
 
-        isInvulnerable = false;
+        UpdateHealthUI();
     }
 
     void UpdateHealthUI()
@@ -63,39 +78,28 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    // --- YENİ EKLENEN KISIM: İyileşme Fonksiyonu ---
-    public void Heal(float amount)
+    private IEnumerator InvulnerabilityRoutine()
     {
-        // Eğer can zaten tamamsa hiçbir şey yapma
-        if (currentHealth >= maxHealth) return; 
-
-        currentHealth += amount;
-        
-        // Mathf.Clamp sayesinde can 100'ü (maxHealth) asla geçemez. 
-        // Yani 85 canı varken 20 eklenirse 105 olmaz, 100'de kalır.
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth); 
-        
-        UpdateHealthUI(); // Can barı görselini güncelle
-        Debug.Log("Karakter iyileşti! Yeni can: " + currentHealth);
+        isInvulnerable = true;
+        for (float i = 0; i < 2f; i += 0.2f)
+        {
+            spriteRenderer.enabled = false;
+            yield return new WaitForSeconds(0.1f);
+            spriteRenderer.enabled = true;
+            yield return new WaitForSeconds(0.1f);
+        }
+        isInvulnerable = false;
     }
-    void Die() 
-    { 
-        Debug.Log("Sistem Çöktü! Karakter Öldü."); 
 
-        // 1. Sahnede GameManager'ın içindeki GameOverManager scriptini buluyoruz
+    void Die()
+    {
+        // Öldüğünde canı sıfırla ki Level 1'den başlarsa fullensin
+        if (ScoreManager.instance != null) ScoreManager.instance.mevcutCan = maxHealth;
+
         GameOverManager gameOverManager = FindFirstObjectByType<GameOverManager>();
-        
         if (gameOverManager != null)
         {
-            // 2. ScoreManager'daki Singleton yapısını kullanarak güncel skoru anında çekiyoruz!
-            int finalScore = ScoreManager.instance.score; 
-            
-            // 3. Skoru Game Over paneline gönderip zamanı donduruyoruz.
-            gameOverManager.ShowGameOver(finalScore);
-        }
-        else
-        {
-            Debug.LogError("Sahnede GameOverManager bulunamadı! Canvas veya GameManager objesine eklendiğinden emin ol.");
+            gameOverManager.ShowGameOver(ScoreManager.instance.score);
         }
     }
 }

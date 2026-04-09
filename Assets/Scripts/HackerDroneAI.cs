@@ -112,7 +112,7 @@ public class HackerDroneAI : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, targetPos, patrolSpeed * Time.deltaTime);
     }
 
-    // --- HASAR VE HACK KISMI (BURASI GÜNCELLENDİ) ---
+    // --- HASAR VE HACK KISMI
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player") && !isReturning && !isStunned)

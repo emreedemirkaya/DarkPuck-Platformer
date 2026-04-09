@@ -1,40 +1,53 @@
 using UnityEngine;
-using TMPro; // TextMeshPro kullanıyorsan bu gerekli
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
-    // Diğer scriptlerden kolayca erişmek için Singleton yapısı
-    public static ScoreManager instance; 
+    public static ScoreManager instance;
 
+    [Header("Veriler")]
     public int score = 0;
-    public TextMeshProUGUI scoreText; // Canvas'taki yazı objemiz
+    public float mevcutCan = 100f; // Canı burada tutuyoruz
+
+    [Header("UI Referansları")]
+    public TextMeshProUGUI scoreText;
 
     private void Awake()
     {
-        // Sahnede sadece tek bir ScoreManager olduğundan emin oluyoruz
+        // Singleton Yapısı
         if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(gameObject); // Sahneler arası bu objeyi koru
         }
         else
         {
-            Destroy(gameObject); // Yanlışlıkla birden fazla eklenirse fazladan olanı siler
+            Destroy(gameObject);
+            return;
         }
     }
 
-    // Skoru artırmak için çağıracağımız fonksiyon
+    private void OnEnable() { SceneManager.sceneLoaded += OnSceneLoaded; }
+    private void OnDisable() { SceneManager.sceneLoaded -= OnSceneLoaded; }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // Her yeni sahne yüklendiğinde UI'yı bul ve güncelle
+        GameObject go = GameObject.Find("ScoreText");
+        if (go != null) scoreText = go.GetComponent<TextMeshProUGUI>();
+        
+        UpdateScoreUI();
+    }
+
     public void AddScore(int points)
     {
         score += points;
         UpdateScoreUI();
     }
 
-    // Ekrandaki metni güncelleyen fonksiyon
     private void UpdateScoreUI()
     {
-        if(scoreText != null)
-        {
-            scoreText.text = "SCORE:" + score;
-        }
+        if (scoreText != null) scoreText.text = "SCORE:" + score;
     }
 }

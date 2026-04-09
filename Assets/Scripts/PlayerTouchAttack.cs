@@ -15,7 +15,7 @@ public class PlayerTouchAttack : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // Çarptığımız obje "Enemy" etiketine sahip mi? (Yön hiç fark etmez)
+        // Çarptığımız obje "Enemy" etiketine sahip mi?
         if (collision.gameObject.CompareTag("Enemy"))
         {
             DroneHealth droneHealth = collision.gameObject.GetComponent<DroneHealth>();

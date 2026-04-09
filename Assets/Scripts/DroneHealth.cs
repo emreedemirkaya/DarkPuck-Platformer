@@ -47,17 +47,16 @@ public class DroneHealth : MonoBehaviour
             Debug.Log("Drone yok edildi, 50 puan eklendi!");
         }
 
-        // --- YENİ EKLENEN KISIM: OYUNCUYA CAN EKLEME ---
+        //OYUNCUYA CAN EKLEME ---
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
         {
             PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
             if (playerHealth != null)
             {
-                playerHealth.Heal(20f); // Oyuncuya 20 can ver
+                playerHealth.Heal(20f); // Oyuncuya 20 can ekle
             }
         }
-        // ------------------------------------------------
 
         // Drone'un devriye ve ateş etme zekasını kapat
         if (movementScript != null) movementScript.enabled = false;

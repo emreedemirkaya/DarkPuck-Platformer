@@ -70,6 +70,7 @@
     <Compile Include="Assets/Scripts/DotController.cs" />
     <Compile Include="Assets/Scripts/Teleporter.cs" />
     <Compile Include="Assets/Scripts/LevelCompleteManager.cs" />
+    <Compile Include="Assets/Scripts/LaunchPad.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexJitter.cs" />
     <Compile Include="Assets/Scripts/TunnelExit.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_UiFrameRateCounter.cs" />

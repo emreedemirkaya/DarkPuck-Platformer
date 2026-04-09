@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.SceneManagement; // Sahne geçişleri için bu satır şart!
 using TMPro;
 
 public class LevelCompleteManager : MonoBehaviour
@@ -10,17 +10,18 @@ public class LevelCompleteManager : MonoBehaviour
 
     public void ShowLevelComplete(int totalScore)
     {
-        levelCompletePanel.SetActive(true); // Paneli aç
-        finalScoreText.text = "Total Score: " + totalScore.ToString();
-        
-        Time.timeScale = 0f; // Oyunu (zamanı) dondur
+        levelCompletePanel.SetActive(true); 
+        finalScoreText.text = "Score: " + totalScore.ToString();
+        Time.timeScale = 0f;
     }
 
     public void NextLevel()
     {
-        Time.timeScale = 1f;
-        // Şimdilik 2. level olmadığı için Ana Menüye veya aynı levele döndürebilirsin
-        SceneManager.LoadScene("MainMenu"); 
+        // 1. Dondurulan zamanı tekrar normale döndür (Yoksa Level 2'de karakterin hareket edemez!)
+        Time.timeScale = 1f; 
+        
+        // 2. Tırnak içindeki isim, Level 2 sahnenin adıyla BİREBİR aynı olmalı (Büyük/küçük harf duyarlıdır)
+        SceneManager.LoadScene("Level2"); 
     }
 
     public void GoToMainMenu()

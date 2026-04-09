@@ -11,7 +11,6 @@ public class DotController : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         if (collectionSound != null && audioSource == null)
         {
-            // Ses eklemek istiyorsan, AudioSource bileşenini otomatik ekle
             audioSource = gameObject.AddComponent<AudioSource>();
         }
     }

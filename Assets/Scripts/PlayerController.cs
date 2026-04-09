@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
 
         moveInput = Input.GetAxisRaw("Horizontal");
 
-        // --- YENİ EKLENEN KISIM: Virüs Bulaşınca Yönü Tersine Çevir ---
+        //  Virüs Bulaşınca Yönü Tersine Çevir 
         if (isHacked)
         {
             moveInput = -moveInput; // Sağ tuş sol, sol tuş sağ olur!
@@ -45,14 +45,13 @@ public class PlayerController : MonoBehaviour
 
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
-        // --- DEĞİŞTİRİLEN KISIM: Hackliyken Zıplamayı İptal Et ---
+        // Hackliyken Zıplamayı İptal Et
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             Jump();
         }
 
         // Karakterin yönünü çevirme (Sağ-Sol)
-        // Not: moveInput tersine döndüğü için hackliyken karakterin bakış yönü de otomatik olarak uyumlu çalışacaktır.
         if (moveInput > 0) transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
         else if (moveInput < 0) transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
     }
@@ -95,7 +94,7 @@ public class PlayerController : MonoBehaviour
         isKnockback = false;
     }
 
-    // --- YENİ EKLENEN KISIM: Hacker Drone Sistemi ---
+    //Hacker Drone Sistemi
     public void ApplyHack(float duration)
     {
         if (!isHacked) 
@@ -109,7 +108,7 @@ public class PlayerController : MonoBehaviour
         isHacked = true;
         Debug.Log("SİSTEME SIZILDI! Kontroller tersine döndü ve zıplama kilitlendi!");
         
-        // Karakteri hacklendiğini belli etmek için "Matrix Yeşili" rengine sokalım
+        // Karakteri hacklendiğini belli etmek için "Matrix Yeşili" rengi olur
         Color originalColor = Color.white; 
         if (spriteRenderer != null)
         {
@@ -117,7 +116,7 @@ public class PlayerController : MonoBehaviour
             spriteRenderer.color = Color.green;
         }
 
-        // Drone'un belirlediği süre kadar (örneğin 2.5 saniye) bu halde bekle
+        // Drone'un belirlediği süre kadar bu halde bekle
         yield return new WaitForSeconds(duration);
 
         // Süre bitince sistemi normale döndür
