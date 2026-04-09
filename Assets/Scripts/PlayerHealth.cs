@@ -16,25 +16,33 @@ public class PlayerHealth : MonoBehaviour
     private bool isInvulnerable = false;
 
     IEnumerator Start()
-{
-    spriteRenderer = GetComponent<SpriteRenderer>();
-
-    // 1. Sahnenin ve UI'ın tam oturması için 1 frame (kare) bekle
-    yield return null; 
-
-    // 2. ScoreManager'dan canı çek
-    if (ScoreManager.instance != null)
     {
-        currentHealth = ScoreManager.instance.mevcutCan;
-        Debug.Log("Can Verisi Çekildi: " + currentHealth);
-    }
-    else
-    {
-        currentHealth = maxHealth;
-    }
+        spriteRenderer = GetComponent<SpriteRenderer>();
 
-    UpdateHealthUI();
-}
+        // 1. Sahnenin ve UI sisteminin uyanması için kısa bir süre bekle
+        yield return new WaitForSeconds(0.01f); 
+
+        // 2. REFERANS KONTROLÜ: Eğer referans kopmuşsa sahnedeki barı bul
+        if (healthBarFill == null)
+        {
+            // Sahnedeki 'HealthBarFill' isimli objeyi bulmaya çalışır
+            GameObject barGo = GameObject.Find("health_bar_filler"); 
+            if (barGo != null) healthBarFill = barGo.GetComponent<Image>();
+        }
+
+        // 3. ScoreManager'dan canı çek
+        if (ScoreManager.instance != null)
+        {
+            currentHealth = ScoreManager.instance.mevcutCan;
+        }
+        else
+        {
+            currentHealth = maxHealth;
+        }
+
+        // 4. UI'ı zorla güncelle
+        UpdateHealthUI();
+    }
 
     public void TakeDamage(float amount)
     {
@@ -43,7 +51,6 @@ public class PlayerHealth : MonoBehaviour
         currentHealth -= amount;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
 
-        // ScoreManager'daki kalıcı veriyi anında güncelle
         if (ScoreManager.instance != null)
         {
             ScoreManager.instance.mevcutCan = currentHealth;
@@ -55,27 +62,29 @@ public class PlayerHealth : MonoBehaviour
         else StartCoroutine(InvulnerabilityRoutine());
     }
 
-    public void Heal(float amount)
-    {
-        currentHealth += amount;
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
-
-        if (ScoreManager.instance != null)
-        {
-            ScoreManager.instance.mevcutCan = currentHealth;
-        }
-
-        UpdateHealthUI();
-    }
-
+    // UI Güncelleme Fonksiyonu
     void UpdateHealthUI()
     {
         if (healthBarFill != null)
         {
+            // Image Type'ın 'Filled' olduğundan emin olmalısın
             float fillRatio = currentHealth / maxHealth;
             healthBarFill.fillAmount = fillRatio;
             healthBarFill.color = healthGradient.Evaluate(fillRatio);
         }
+        else
+        {
+            Debug.LogWarning("HealthBarFill referansı bulunamadı! Lütfen Inspector'dan atayın.");
+        }
+    }
+
+    // Diğer fonksiyonlar (Heal, Die, Invulnerability) aynı kalabilir...
+    public void Heal(float amount)
+    {
+        currentHealth += amount;
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+        if (ScoreManager.instance != null) ScoreManager.instance.mevcutCan = currentHealth;
+        UpdateHealthUI();
     }
 
     private IEnumerator InvulnerabilityRoutine()
@@ -93,13 +102,8 @@ public class PlayerHealth : MonoBehaviour
 
     void Die()
     {
-        // Öldüğünde canı sıfırla ki Level 1'den başlarsa fullensin
         if (ScoreManager.instance != null) ScoreManager.instance.mevcutCan = maxHealth;
-
         GameOverManager gameOverManager = FindFirstObjectByType<GameOverManager>();
-        if (gameOverManager != null)
-        {
-            gameOverManager.ShowGameOver(ScoreManager.instance.score);
-        }
+        if (gameOverManager != null) gameOverManager.ShowGameOver(ScoreManager.instance.score);
     }
 }
