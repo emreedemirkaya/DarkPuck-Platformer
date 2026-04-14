@@ -113,6 +113,7 @@
     <Compile Include="Assets/Scripts/KeyItem.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TextMeshProFloatingText.cs" />
     <Compile Include="Assets/Scripts/MovingPlatform.cs" />
+    <Compile Include="Assets/Scripts/PinkPacManHeal.cs" />
     <Compile Include="Assets/Scripts/CameraController.cs" />
   </ItemGroup>
   <ItemGroup>
