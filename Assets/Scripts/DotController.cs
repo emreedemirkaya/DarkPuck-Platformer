@@ -2,23 +2,25 @@ using UnityEngine;
 
 public class DotController : MonoBehaviour
 {
-    public int scoreValue = 10; // Bu yemi toplayınca kaç puan verecek?
-    public AudioClip collectionSound; // (İsteğe bağlı) Toplama sesi
+    public int scoreValue = 10; 
+    public AudioClip collectionSound; 
     private AudioSource audioSource;
+    private bool isCollected = false; // Çift toplamayı engellemek için
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        if (collectionSound != null && audioSource == null)
+        // Eğer objede AudioSource yoksa otomatik ekle
+        if (audioSource == null)
         {
             audioSource = gameObject.AddComponent<AudioSource>();
+            audioSource.playOnAwake = false;
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // Eğer yeme "Player" etiketli bir obje çarparsa
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !isCollected)
         {
             CollectDot();
         }
@@ -26,23 +28,30 @@ public class DotController : MonoBehaviour
 
     void CollectDot()
     {
-        // ScoreManager'a ulaşıp puanı ekle (scoreValue senin yeme verdiğin 10 değeri)
+        isCollected = true; // Flag'i true yap ki aynı anda iki kez tetiklenmesin
+
+        // Puan ekleme
         if (ScoreManager.instance != null)
         {
             ScoreManager.instance.AddScore(scoreValue);
         }
 
-        // (İsteğe bağlı) Ses oynat
         if (collectionSound != null && audioSource != null)
         {
+            // Sesi çal
             audioSource.PlayOneShot(collectionSound);
+
+            // Görseli ve fiziksel etkileşimi hemen kapat
             GetComponent<Collider2D>().enabled = false;
-            GetComponent<SpriteRenderer>().enabled = false;
-            Destroy(gameObject, 0.5f); 
+            if (GetComponent<SpriteRenderer>() != null) 
+                GetComponent<SpriteRenderer>().enabled = false;
+
+            // Ses dosyasının uzunluğu kadar bekle ve sonra yok et
+            // Böylece mp3 dosyan kaç saniyeyse o kadar bekler
+            Destroy(gameObject, collectionSound.length); 
         }
         else
         {
-            // Ses yoksa hemen yok et
             Destroy(gameObject);
         }
     }

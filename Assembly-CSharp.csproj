@@ -52,6 +52,7 @@
     <Compile Include="Assets/Scripts/LevelEndTrigger.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextEventHandler.cs" />
     <Compile Include="Assets/Scripts/PlayerTouchAttack.cs" />
+    <Compile Include="Assets/Scripts/BlinkEffect.cs" />
     <Compile Include="Assets/Scripts/LaserTracking.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/EnvMapAnimator.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextSelector_A.cs" />

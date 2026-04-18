@@ -27,7 +27,7 @@ public class VisionArea : MonoBehaviour
         }
     }
 
-    // Ekstra Güvenlik: Eğer bu obje (ışık) bir şekilde deaktif olursa alarmı sustur
+    // Eğer bu obje (ışık) bir şekilde deaktif olursa alarmı sustur
     private void OnDisable()
     {
         if (anaKamera != null)
