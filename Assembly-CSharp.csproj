@@ -72,6 +72,7 @@
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexShakeB.cs" />
     <Compile Include="Assets/Scripts/DotController.cs" />
+    <Compile Include="Assets/Scripts/CoreBattery.cs" />
     <Compile Include="Assets/Scripts/Teleporter.cs" />
     <Compile Include="Assets/Scripts/LevelCompleteManager.cs" />
     <Compile Include="Assets/Scripts/LaunchPad.cs" />
@@ -97,6 +98,7 @@
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/ChatController.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_DigitValidator.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_FrameRateCounter.cs" />
+    <Compile Include="Assets/Scripts/PatrolObstacle.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark01.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TextMeshSpawner.cs" />
     <Compile Include="Assets/Scripts/MainMenuManager.cs" />
@@ -104,6 +106,7 @@
     <Compile Include="Assets/Scripts/HologramMessage.cs" />
     <Compile Include="Assets/Scripts/DeathTrigger.cs" />
     <Compile Include="Assets/Scripts/KirilabilenZemin.cs" />
+    <Compile Include="Assets/Scripts/GlitchEngel.cs" />
     <Compile Include="Assets/Scripts/DroneHealth.cs" />
     <Compile Include="Assets/Scripts/EnergyOverload.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/CameraController.cs" />
@@ -117,6 +120,7 @@
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/ObjectSpin.cs" />
     <Compile Include="Assets/Scripts/TwoWayPortal.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_PhoneNumberValidator.cs" />
+    <Compile Include="Assets/Scripts/AntiGravityZone.cs" />
     <Compile Include="Assets/Scripts/PuzzleSwitch.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TextConsoleSimulator.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TeleType.cs" />

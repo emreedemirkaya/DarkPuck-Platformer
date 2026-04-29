@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Dot
   - Screen
+  - Socket
   layers:
   - Default
   - TransparentFX
