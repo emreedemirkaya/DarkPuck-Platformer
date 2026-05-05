@@ -1,6 +1,6 @@
 using UnityEngine;
-using TMPro; // TextMeshPro kullanıyorsan
-using UnityEngine.UI; // Standart Text kullanıyorsan
+using TMPro; 
+using UnityEngine.UI;
 
 public class BlinkEffect : MonoBehaviour
 {

@@ -8,7 +8,7 @@ public class UnstablePlatform : MonoBehaviour
     
     [Header("Algılama Alanı")]
     public Vector2 algilamaBoyutu = new Vector2(1.5f, 0.5f); // Platformun üstündeki alanın boyutu
-    public Vector2 algilamaOfseti = new Vector2(0f, 0.5f);  // Platformun ne kadar üzerinde?
+    public Vector2 algilamaOfseti = new Vector2(0f, 0.5f);  // Platformun ne kadar üzerinde
     public LayerMask oyuncuKatmani; 
 
     private float mevcutZaman = 0f;

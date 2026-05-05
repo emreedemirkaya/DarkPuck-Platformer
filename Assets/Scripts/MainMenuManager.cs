@@ -6,11 +6,27 @@ public class MainMenuManager : MonoBehaviour
     [Header("Menü Panelleri")]
     public GameObject rulesPanel; // Kurallar panelini buraya bağlayacağız
 
+   void Start()
+    {
+        if (ScoreManager.instance != null)
+        {
+            ScoreManager.instance.score = 0;
+            ScoreManager.instance.mevcutCan = 100f; // CAN BURADA FULKLENDİ
+            Debug.Log("Ana Menü Yüklendi: Skor ve Can sıfırlandı!");
+        }
+    }
+
     public void PlayGame()
     {
         Time.timeScale = 1f; 
         if (PauseManager.isPaused) PauseManager.isPaused = false; 
         
+        if (ScoreManager.instance != null)
+        {
+            ScoreManager.instance.score = 0;
+            ScoreManager.instance.mevcutCan = 100f; // CAN BURADA FULLENDİ
+        }
+
         SceneManager.LoadScene("Level1"); 
     }
 
@@ -19,8 +35,6 @@ public class MainMenuManager : MonoBehaviour
         Debug.Log("Oyundan çıkıldı!");
         Application.Quit();
     }
-
-    // --- YENİ EKLENEN KISIM ---
     
     // NASIL OYNANIR butonuna basılınca paneli aç
     public void OpenRules()

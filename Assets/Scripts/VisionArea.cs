@@ -20,7 +20,6 @@ public class VisionArea : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        // Hata buradaydı: Eğer collision veya anaKamera o an yok oluyorsa hata verir
         if (anaKamera != null && collision != null && collision.CompareTag("Player"))
         {
             anaKamera.OyuncuTaramadanCikti();

@@ -12,7 +12,7 @@ public class ScoreManager : MonoBehaviour
 
     [Header("UI Referansları")]
     public TextMeshProUGUI scoreText;
-
+    public int levelBaslangicSkoru = 0;
     private void Awake()
     {
         // Singleton Yapısı
