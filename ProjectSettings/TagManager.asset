@@ -9,6 +9,11 @@ TagManager:
   - Dot
   - Screen
   - Socket
+  - Negative
+  - Positive
+  - MagneticZone
+  - RedSwitch
+  - BlueSwitch
   layers:
   - Default
   - TransparentFX
