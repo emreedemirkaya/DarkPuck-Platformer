@@ -9,6 +9,8 @@ public class ScoreManager : MonoBehaviour
     [Header("Veriler")]
     public int score = 0;
     public float mevcutCan = 100f; // Canı burada tutuyoruz
+    public bool anahtarVar = false;
+    
 
     [Header("UI Referansları")]
     public TextMeshProUGUI scoreText;

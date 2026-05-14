@@ -1,0 +1,676 @@
+fileFormatVersion: 2
+guid: 4df9675f01af644eeb7cac6f43a013bf
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4081193278129552956
+    second: pinkpuck_0
+  - first:
+      213: -5423260422906733200
+    second: pinkpuck_1
+  - first:
+      213: 5498692377606828007
+    second: pinkpuck_2
+  - first:
+      213: 7758924982846423400
+    second: pinkpuck_3
+  - first:
+      213: 1750138199187958347
+    second: pinkpuck_4
+  - first:
+      213: -6798072098005404023
+    second: pinkpuck_5
+  - first:
+      213: 6259240104212601505
+    second: pinkpuck_6
+  - first:
+      213: -7083420847681151483
+    second: pinkpuck_7
+  - first:
+      213: 1026897171398551164
+    second: pinkpuck_8
+  - first:
+      213: 8065999813699927940
+    second: pinkpuck_9
+  - first:
+      213: -620017963252357701
+    second: pinkpuck_10
+  - first:
+      213: 3602194367266189974
+    second: pinkpuck_11
+  - first:
+      213: 6141177423160968402
+    second: pinkpuck_12
+  - first:
+      213: 6126104813853475656
+    second: pinkpuck_13
+  - first:
+      213: -7646108499082794017
+    second: pinkpuck_14
+  - first:
+      213: 4076198594101828837
+    second: pinkpuck_15
+  - first:
+      213: 8905863412693718037
+    second: pinkpuck_16
+  - first:
+      213: -4513408631307270900
+    second: pinkpuck_17
+  - first:
+      213: -6789123450479150480
+    second: pinkpuck_18
+  - first:
+      213: 1202674047950931373
+    second: pinkpuck_19
+  - first:
+      213: 3741168725557890798
+    second: pinkpuck_20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: pinkpuck_0
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 600
+        width: 104
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c1406d2650bc57c0800000000000000
+      internalID: -4081193278129552956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinkpuck_1
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 572
+        width: 164
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07d95380165bcb4b0800000000000000
+      internalID: -5423260422906733200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinkpuck_2
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 721
+        width: 149
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ef276885974f4c40800000000000000
+      internalID: 5498692377606828007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinkpuck_3
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 652
+        width: 19
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8610771d92d3dab60800000000000000
+      internalID: 7758924982846423400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinkpuck_4
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 623
+        width: 19
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4aa0766b6db94810800000000000000
+      internalID: 1750138199187958347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinkpuck_5
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 582
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 986b4e0d17568a1a0800000000000000
+      internalID: -6798072098005404023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinkpuck_6
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 582
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1aa987f36b94dd650800000000000000
+      internalID: 6259240104212601505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinkpuck_7
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 589
+        width: 16
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50e5e53c442a2bd90800000000000000
+      internalID: -7083420847681151483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinkpuck_8
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 577
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7660126985404e00800000000000000
+      internalID: 1026897171398551164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinkpuck_9
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 451
+        width: 100
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48f73f5581030ff60800000000000000
+      internalID: 8065999813699927940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinkpuck_10
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 451
+        width: 101
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb56bf982f04567f0800000000000000
+      internalID: -620017963252357701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinkpuck_11
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 451
+        width: 101
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69270d811b09df130800000000000000
+      internalID: 3602194367266189974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinkpuck_12
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 451
+        width: 100
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d4882a3458d93550800000000000000
+      internalID: 6141177423160968402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinkpuck_13
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 313
+        width: 90
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8430c86eedb440550800000000000000
+      internalID: 6126104813853475656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinkpuck_14
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 313
+        width: 91
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdb2316b4d093e590800000000000000
+      internalID: -7646108499082794017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinkpuck_15
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 313
+        width: 90
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ecd2635601919830800000000000000
+      internalID: 4076198594101828837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinkpuck_16
+      rect:
+        serializedVersion: 2
+        x: 549
+        y: 313
+        width: 90
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 514d1cba69bf79b70800000000000000
+      internalID: 8905863412693718037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinkpuck_17
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 313
+        width: 89
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c058fbc43c62d51c0800000000000000
+      internalID: -4513408631307270900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinkpuck_18
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 289
+        width: 28
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07a7aed213038c1a0800000000000000
+      internalID: -6789123450479150480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinkpuck_19
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 289
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da542b0bca1c0b010800000000000000
+      internalID: 1202674047950931373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinkpuck_20
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 286
+        width: 47
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eeecda3622d4be330800000000000000
+      internalID: 3741168725557890798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      pinkpuck_0: -4081193278129552956
+      pinkpuck_1: -5423260422906733200
+      pinkpuck_10: -620017963252357701
+      pinkpuck_11: 3602194367266189974
+      pinkpuck_12: 6141177423160968402
+      pinkpuck_13: 6126104813853475656
+      pinkpuck_14: -7646108499082794017
+      pinkpuck_15: 4076198594101828837
+      pinkpuck_16: 8905863412693718037
+      pinkpuck_17: -4513408631307270900
+      pinkpuck_18: -6789123450479150480
+      pinkpuck_19: 1202674047950931373
+      pinkpuck_2: 5498692377606828007
+      pinkpuck_20: 3741168725557890798
+      pinkpuck_3: 7758924982846423400
+      pinkpuck_4: 1750138199187958347
+      pinkpuck_5: -6798072098005404023
+      pinkpuck_6: 6259240104212601505
+      pinkpuck_7: -7083420847681151483
+      pinkpuck_8: 1026897171398551164
+      pinkpuck_9: 8065999813699927940
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
